@@ -4,10 +4,10 @@
   "description": "identify prime numbers",
   "main": "package",
   "scripts": {
-    "dev": "nodemon --watch src --exec 'babel-node src'",
-    "start": "node package",
+    "dev": "NODE_ENV=development NODE_PATH=src nodemon --watch src --exec 'babel-node src'",
+    "start": "NODE_ENV=production NODE_PATH=package node package",
     "build": "babel src --out-dir package",
-    "test": "mocha --require babel-register"
+    "test": "NODE_ENV=test NODE_PATH=src mocha --require babel-register"
   },
   "author": "Miles Watson",
   "license": "ISC",
@@ -17,6 +17,11 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
   }
 }
