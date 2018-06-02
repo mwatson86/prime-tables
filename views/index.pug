@@ -2,4 +2,19 @@ html
   head
     title= title
   body
-    h1= message
+    h1= title
+    form.form(method='GET' action='/')
+      input.form__input(type='number', name='number' value=number)
+      button.form__button(type='submit') Submit
+    if primeNumbers
+      table
+        tbody
+          tr
+            td
+            each yAxis in primeNumbers
+              td= yAxis
+          each xAxis in primeNumbers
+            tr
+              td= xAxis
+                each multiplier in primeNumbers
+                  td= xAxis*multiplier

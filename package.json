@@ -5,9 +5,9 @@
   "main": "package",
   "scripts": {
     "dev": "NODE_ENV=development NODE_PATH=src nodemon --watch src --exec 'babel-node src'",
-    "start": "NODE_ENV=production NODE_PATH=package node package",
-    "build": "babel src --out-dir package",
-    "test": "NODE_ENV=test NODE_PATH=src mocha --require babel-register"
+    "start": "NODE_ENV=production NODE_PATH=bundle node bundle",
+    "build": "babel src --out-dir bundle",
+    "test": "NODE_ENV=test NODE_PATH=src mocha 'test/**/*.spec.js' --require babel-register"
   },
   "author": "Miles Watson",
   "license": "ISC",
@@ -18,6 +18,7 @@
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "nodemon": "^1.17.5",
+    "sinon": "^5.0.10",
     "supertest": "^3.1.0"
   },
   "dependencies": {

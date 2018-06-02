@@ -1,6 +1,9 @@
 
 import express from 'express';
 
+import primeNumberMiddleware from 'middleware/prime-number';
+import renderMiddleware from 'middleware/render';
+
 const PORT = 3000;
 
 const startup = () => {
@@ -9,12 +12,7 @@ const startup = () => {
 
   app.set('view engine', 'pug');
 
-  app.get('/', (req, res) => {
-    res.render('index', {
-      title: 'title',
-      message: 'message'
-    })
-  });
+  app.get('/', primeNumberMiddleware, renderMiddleware);
 
   const server = app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
