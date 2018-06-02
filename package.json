@@ -2,7 +2,7 @@
   "name": "prime-tables",
   "version": "1.0.0",
   "description": "identify prime numbers",
-  "main": "package",
+  "main": "bundle",
   "scripts": {
     "dev": "NODE_ENV=development NODE_PATH=src nodemon --watch src --exec 'babel-node src'",
     "start": "NODE_ENV=production NODE_PATH=bundle node bundle",
